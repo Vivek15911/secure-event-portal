@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import { AuthPage } from "./components/auth/AuthPage";
 import BookingPage from "./pages/BookingPage";
 import DashboardPage from "./pages/DashboardPage";
+import TicketVerificationPage from "./pages/TicketVerificationPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/book/:type" element={<BookingPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/verify/:ticketNumber" element={<TicketVerificationPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -43,12 +43,7 @@ const BookingPage = () => {
 
     try {
       const ticketNumber = `TKT-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-      const qrCodeData = JSON.stringify({
-        ticketNumber,
-        type,
-        date: bookingData.bookingDate,
-        name: bookingData.fullName,
-      });
+      const qrCodeData = `${window.location.origin}/verify/${ticketNumber}`;
 
       const { data: booking, error: bookingError } = await supabase
         .from("bookings")

@@ -29,12 +29,18 @@ const venuesByState: Record<string, string[]> = {
 };
 
 const roomTypes = [
-  "Conference Room",
-  "Meeting Room",
-  "Banquet Hall",
-  "Training Room",
-  "Event Space",
-  "Co-working Space"
+  "Single Room",
+  "Double Room",
+  "Suite",
+  "Deluxe Room",
+  "Executive Room"
+];
+
+const bedOptions = [
+  "1 Single Bed",
+  "1 Double Bed",
+  "2 Single Beds",
+  "1 King Bed"
 ];
 
 const visitTimes = [

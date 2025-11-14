@@ -34,7 +34,7 @@ const showTimes = [
   "07:00 PM",
 ];
 
-const seatTypes = ["Regular", "Premium", "VIP", "Box Seats"];
+const seatTypes = ["Normal", "Delux", "VIP", "VIP+"];
 
 interface TheaterBookingFormProps {
   onSubmit: (data: any) => void;

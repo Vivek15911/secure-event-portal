@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Session } from "@supabase/supabase-js";
 import { format } from "date-fns";
+import { QRCodeSVG } from "qrcode.react";
 import { QrCode, Calendar, MapPin, Users } from "lucide-react";
 
 interface Ticket {

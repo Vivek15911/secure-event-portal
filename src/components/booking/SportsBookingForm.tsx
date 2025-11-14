@@ -15,17 +15,45 @@ const indianStates = [
 ];
 
 const sportsFacilitiesByState: Record<string, string[]> = {
-  "Delhi": ["Jawaharlal Nehru Stadium", "Thyagaraj Sports Complex", "Siri Fort Sports Complex", "Dr. SPM Swimming Pool Complex"],
-  "Maharashtra": ["DY Patil Stadium", "Andheri Sports Complex", "Shivaji Park", "Balewadi Sports Complex"],
-  "Karnataka": ["Sree Kanteerava Stadium", "Bangalore Football Stadium", "KPSC Sports Complex", "Cubbon Park Sports Arena"],
-  "Tamil Nadu": ["MA Chidambaram Stadium", "Nehru Stadium Chennai", "YMCA Sports Complex", "Anna Stadium"],
-  "West Bengal": ["Eden Gardens", "Salt Lake Stadium", "Netaji Indoor Stadium", "Rabindra Sarobar Complex"],
-  "Kerala": ["Jawaharlal Nehru Stadium Kochi", "Greenfield Stadium", "Jimmy George Indoor Stadium", "Calicut Sports Hub"],
-  "Gujarat": ["Narendra Modi Stadium", "Sardar Patel Stadium", "Ahmedabad Sports Club", "Trans Stadia Complex"],
-  "Rajasthan": ["Sawai Mansingh Stadium", "SMS Stadium Indoor Complex", "Jaipur Sports Academy", "Udaipur Sports Center"],
-  "Uttar Pradesh": ["Green Park Stadium", "Buddha International Circuit", "Lucknow Sports Complex", "Agra Sports Hub"],
-  "Punjab": ["PCA Stadium", "Guru Nanak Stadium", "Ludhiana Sports Complex", "Amritsar Sports Academy"],
+  "Andhra Pradesh": ["Indira Gandhi Stadium", "GMC Balayogi Stadium", "ACA-VDCA Stadium", "Dr BR Ambedkar Stadium", "Rajiv Gandhi Indoor Stadium"],
+  "Arunachal Pradesh": ["Chimpu Sports Complex", "Rajiv Gandhi Stadium", "Yupia Sports Complex", "Itanagar Stadium", "Pasighat Sports Ground"],
+  "Assam": ["Nehru Stadium Guwahati", "Barsapara Cricket Stadium", "Indira Gandhi Athletic Stadium", "Judges Field", "Kanaklata Indoor Stadium"],
+  "Bihar": ["Moin-ul-Haq Stadium", "Patliputra Sports Complex", "JP Sinha Indoor Stadium", "Bapu Stadium", "Urja Stadium"],
+  "Chhattisgarh": ["Shaheed Veer Narayan Singh Stadium", "Pt Deendayal Upadhyay Stadium", "Raipur International Cricket Stadium", "Maa Mahamaya Stadium", "Swami Vivekananda Stadium"],
+  "Goa": ["Jawaharlal Nehru Stadium", "Fatorda Stadium", "Tilak Maidan", "Bambolim Stadium", "Duler Stadium"],
+  "Gujarat": ["Narendra Modi Stadium", "Sardar Patel Stadium", "Rajkot Sports Complex", "Trans Stadia", "Surat Indoor Stadium"],
+  "Haryana": ["Tau Devi Lal Stadium", "Nehru Stadium Faridabad", "Chaudhary Bansi Lal Stadium", "Sports Complex Karnal", "Maharana Pratap Stadium"],
+  "Himachal Pradesh": ["HPCA Stadium Dharamshala", "Indira Gandhi Sports Complex", "Ice Skating Rink Shimla", "Paddal Ground", "Solan Sports Complex"],
+  "Jharkhand": ["JSCA Stadium", "Keenan Stadium", "Birsa Munda Stadium", "Mega Sports Complex", "JRD Tata Sports Complex"],
+  "Karnataka": ["M Chinnaswamy Stadium", "Sree Kanteerava Stadium", "Mysore Sports Complex", "Mangala Stadium", "Hubli Sports Complex"],
+  "Kerala": ["Jawaharlal Nehru Stadium Kochi", "Greenfield Stadium", "Kannur Indoor Stadium", "Central Stadium Trivandrum", "Kozhikode Sports Complex"],
+  "Madhya Pradesh": ["Nehru Stadium Indore", "Motilal Nehru Stadium", "Holkar Cricket Stadium", "TT Nagar Stadium", "Roop Singh Stadium"],
+  "Maharashtra": ["Wankhede Stadium", "DY Patil Stadium", "Balewadi Sports Complex", "Shiv Chhatrapati Sports Complex", "Mumbai Football Arena"],
+  "Manipur": ["Khuman Lampak Stadium", "Manipur Indoor Stadium", "Imphal Sports Complex", "Tulihal Football Stadium", "Langjing Sports Complex"],
+  "Meghalaya": ["JN Stadium Shillong", "Polo Ground Shillong", "Rilbong Sports Complex", "Tura Stadium", "Jowai Sports Ground"],
+  "Mizoram": ["Rajiv Gandhi Stadium", "Lammual Sports Complex", "AR Ground Aizawl", "Lunglei Sports Complex", "Champhai Stadium"],
+  "Nagaland": ["Kohima Local Ground", "Indira Gandhi Stadium", "Dimapur Sports Complex", "Mokokchung Stadium", "Wokha Sports Ground"],
+  "Odisha": ["Kalinga Stadium", "Barabati Stadium", "Biju Patnaik Sports Complex", "Cuttack Indoor Stadium", "Rourkela Hockey Stadium"],
+  "Punjab": ["Punjab Cricket Stadium", "Guru Nanak Stadium", "Ludhiana Sports Complex", "Tau Devi Lal Stadium", "Patiala Sports Complex"],
+  "Rajasthan": ["Sawai Mansingh Stadium", "Barkatullah Khan Stadium", "Maharana Pratap Stadium", "Gandhi Stadium", "Kota Sports Complex"],
+  "Sikkim": ["Paljor Stadium", "Gangtok Football Ground", "Namchi Sports Complex", "Jorethang Stadium", "Rangpo Sports Ground"],
+  "Tamil Nadu": ["MA Chidambaram Stadium", "Jawaharlal Nehru Stadium", "Salem Cricket Stadium", "Madurai Sports Complex", "Coimbatore Stadium"],
+  "Telangana": ["GMC Balayogi Stadium", "Lal Bahadur Stadium", "Gachibowli Indoor Stadium", "Warangal Sports Complex", "Nizamabad Stadium"],
+  "Tripura": ["Swami Vivekananda Stadium", "MBB College Ground", "Agartala Sports Complex", "Udaipur Stadium", "Ambassa Sports Ground"],
+  "Uttar Pradesh": ["Ekana Cricket Stadium", "Green Park Stadium", "Atal Bihari Stadium", "Dr Bhimrao Ambedkar Stadium", "Agra Sports Complex"],
+  "Uttarakhand": ["Rajiv Gandhi Stadium", "IIT Roorkee Sports Complex", "Dehradun Sports Stadium", "Parade Ground", "Haldwani Sports Complex"],
+  "West Bengal": ["Eden Gardens", "Salt Lake Stadium", "Netaji Indoor Stadium", "Barasat Stadium", "Siliguri Sports Complex"],
+  "Andaman and Nicobar Islands": ["Swaraj Stadium", "Port Blair Sports Complex", "Carnicobar Stadium", "Diglipur Sports Ground", "Havelock Beach Ground"],
+  "Chandigarh": ["Sector 16 Stadium", "Hockey Stadium", "Cricket Stadium Sector 17", "Sports Complex Sector 42", "Lawn Tennis Complex"],
+  "Dadra and Nagar Haveli and Daman and Diu": ["Daman Sports Complex", "Silvassa Stadium", "Diu Sports Ground", "Dadra Football Ground", "Nani Daman Stadium"],
+  "Delhi": ["Jawaharlal Nehru Stadium", "Arun Jaitley Stadium", "Thyagaraj Stadium", "Indira Gandhi Indoor Stadium", "Major Dhyan Chand Stadium"],
+  "Jammu and Kashmir": ["Sher-i-Kashmir Stadium", "Bakshi Stadium", "Srinagar Sports Complex", "Anantnag Stadium", "Baramulla Sports Ground"],
+  "Ladakh": ["Leh Sports Stadium", "Kargil Sports Complex", "NDS Stadium", "Nubra Sports Ground", "Zanskar Stadium"],
+  "Lakshadweep": ["Kavaratti Sports Ground", "Agatti Stadium", "Minicoy Sports Complex", "Andrott Ground", "Kadmat Beach Stadium"],
+  "Puducherry": ["Indira Gandhi Sports Complex", "Rajiv Gandhi Stadium", "Karaikal Sports Ground", "Yanam Stadium", "Mahe Sports Complex"]
 };
+
+const complexesByState = sportsFacilitiesByState;
 
 const sportTypes = [
   "Cricket", "Football", "Badminton", "Tennis", "Basketball", 
@@ -57,12 +85,12 @@ export const SportsBookingForm = ({ onSubmit, loading }: SportsBookingFormProps)
     email: "",
     phone: "",
     bookingDate: "",
-    state: "",
-    facilityName: "",
-    sportType: "",
     visitTime: "",
     duration: "",
-    numberOfPlayers: "1",
+    state: "",
+    complexName: "",
+    sportType: "",
+    numberOfPeople: "1",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +102,7 @@ export const SportsBookingForm = ({ onSubmit, loading }: SportsBookingFormProps)
     onSubmit(formData);
   };
 
-  const selectedStateFacilities = formData.state ? sportsFacilitiesByState[formData.state] || [] : [];
+  const selectedStateComplexes = formData.state ? complexesByState[formData.state] || [] : [];
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -118,7 +146,7 @@ export const SportsBookingForm = ({ onSubmit, loading }: SportsBookingFormProps)
           <Label htmlFor="state">State *</Label>
           <Select
             value={formData.state}
-            onValueChange={(value) => setFormData({ ...formData, state: value, facilityName: "" })}
+            onValueChange={(value) => setFormData({ ...formData, state: value, complexName: "" })}
             required
           >
             <SelectTrigger>
@@ -135,20 +163,20 @@ export const SportsBookingForm = ({ onSubmit, loading }: SportsBookingFormProps)
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="facilityName">Facility Name *</Label>
+          <Label htmlFor="complexName">Sports Complex Name *</Label>
           <Select
-            value={formData.facilityName}
-            onValueChange={(value) => setFormData({ ...formData, facilityName: value })}
+            value={formData.complexName}
+            onValueChange={(value) => setFormData({ ...formData, complexName: value })}
             required
-            disabled={!formData.state || selectedStateFacilities.length === 0}
+            disabled={!formData.state || selectedStateComplexes.length === 0}
           >
             <SelectTrigger>
-              <SelectValue placeholder={formData.state ? "Select Facility" : "Select State First"} />
+              <SelectValue placeholder={formData.state ? "Select Complex" : "Select State First"} />
             </SelectTrigger>
             <SelectContent>
-              {selectedStateFacilities.map((facility) => (
-                <SelectItem key={facility} value={facility}>
-                  {facility}
+              {selectedStateComplexes.map((complex) => (
+                <SelectItem key={complex} value={complex}>
+                  {complex}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -229,14 +257,14 @@ export const SportsBookingForm = ({ onSubmit, loading }: SportsBookingFormProps)
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="numberOfPlayers">Number of Players *</Label>
+          <Label htmlFor="numberOfPeople">Number of People *</Label>
           <Input
-            id="numberOfPlayers"
-            name="numberOfPlayers"
+            id="numberOfPeople"
+            name="numberOfPeople"
             type="number"
             min="1"
             max="20"
-            value={formData.numberOfPlayers}
+            value={formData.numberOfPeople}
             onChange={handleInputChange}
             required
           />
