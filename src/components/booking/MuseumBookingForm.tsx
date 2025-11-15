@@ -79,7 +79,6 @@ export const MuseumBookingForm = ({ onSubmit, loading }: MuseumBookingFormProps)
     museumName: "",
     ticketType: "",
     numberOfTickets: "1",
-    specialNeeds: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -238,18 +237,6 @@ export const MuseumBookingForm = ({ onSubmit, loading }: MuseumBookingFormProps)
             required
           />
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="specialNeeds">Special Accessibility Needs (Optional)</Label>
-        <Textarea
-          id="specialNeeds"
-          name="specialNeeds"
-          placeholder="E.g., wheelchair access, audio guide needed"
-          value={formData.specialNeeds}
-          onChange={handleInputChange}
-          rows={3}
-        />
       </div>
 
       <Button

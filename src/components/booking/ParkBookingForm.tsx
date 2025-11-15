@@ -88,7 +88,6 @@ export const ParkBookingForm = ({ onSubmit, loading }: ParkBookingFormProps) => 
     parkName: "",
     activityType: "",
     numberOfPeople: "1",
-    equipmentNeeded: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -247,18 +246,6 @@ export const ParkBookingForm = ({ onSubmit, loading }: ParkBookingFormProps) => 
             required
           />
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="equipmentNeeded">Equipment/Facilities Needed (Optional)</Label>
-        <Textarea
-          id="equipmentNeeded"
-          name="equipmentNeeded"
-          placeholder="E.g., tables, chairs, BBQ grill, gazebo"
-          value={formData.equipmentNeeded}
-          onChange={handleInputChange}
-          rows={3}
-        />
       </div>
 
       <Button

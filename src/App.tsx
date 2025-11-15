@@ -55,7 +55,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Index />} />
+            <Route path="/create-ticket" element={<Index />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/book/:type" element={<BookingPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />

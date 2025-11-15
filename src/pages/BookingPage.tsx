@@ -97,11 +97,11 @@ const BookingPage = () => {
       <main className="container mx-auto px-4 py-8">
         <Button
           variant="ghost"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/create-ticket")}
           className="mb-6 gap-2"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Home
+          Back to Create Ticket
         </Button>
 
         <Card className="max-w-2xl mx-auto shadow-medium">

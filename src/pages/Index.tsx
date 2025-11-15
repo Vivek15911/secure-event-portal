@@ -59,7 +59,7 @@ const Index = () => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       if (!session) {
-        navigate("/");
+        navigate("/auth");
       }
     });
 
@@ -68,7 +68,7 @@ const Index = () => {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) {
-        navigate("/");
+        navigate("/auth");
       }
     });
 

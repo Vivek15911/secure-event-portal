@@ -25,7 +25,7 @@ export const AuthPage = () => {
     // Check if user is already logged in
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
-        navigate("/home");
+        navigate("/create-ticket");
       }
     });
   }, [navigate]);
@@ -43,7 +43,7 @@ export const AuthPage = () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/home`,
+        redirectTo: `${window.location.origin}/create-ticket`,
       },
     });
 
@@ -99,7 +99,7 @@ export const AuthPage = () => {
             title: "Welcome back!",
             description: "You have successfully logged in",
           });
-          navigate("/home");
+          navigate("/create-ticket");
         }
       } else {
         if (formData.password !== formData.confirmPassword) {
@@ -126,7 +126,7 @@ export const AuthPage = () => {
           email: formData.email,
           password: formData.password,
           options: {
-            emailRedirectTo: `${window.location.origin}/home`,
+            emailRedirectTo: `${window.location.origin}/create-ticket`,
             data: {
               full_name: formData.fullName,
             },
@@ -152,7 +152,7 @@ export const AuthPage = () => {
             title: "Account Created!",
             description: "Welcome to SecureBook. Redirecting...",
           });
-          navigate("/home");
+          navigate("/create-ticket");
         }
       }
     } catch (error: any) {

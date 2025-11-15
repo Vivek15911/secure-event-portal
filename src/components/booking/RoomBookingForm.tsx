@@ -55,11 +55,9 @@ const venuesByState: Record<string, string[]> = {
 };
 
 const roomTypes = [
-  "Single Room",
-  "Double Room",
-  "Suite",
-  "Deluxe Room",
-  "Executive Room"
+  "Single",
+  "Double",
+  "VIP"
 ];
 
 const bedOptions = [
@@ -100,8 +98,6 @@ export const RoomBookingForm = ({ onSubmit, loading }: RoomBookingFormProps) => 
     roomType: "",
     visitTime: "",
     duration: "",
-    numberOfAttendees: "1",
-    requirements: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -278,31 +274,6 @@ export const RoomBookingForm = ({ onSubmit, loading }: RoomBookingFormProps) => 
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="numberOfAttendees">Number of Attendees *</Label>
-          <Input
-            id="numberOfAttendees"
-            name="numberOfAttendees"
-            type="number"
-            min="1"
-            max="500"
-            value={formData.numberOfAttendees}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="requirements">Special Requirements (Optional)</Label>
-        <Textarea
-          id="requirements"
-          name="requirements"
-          placeholder="E.g., projector, whiteboard, catering, audio system"
-          value={formData.requirements}
-          onChange={handleInputChange}
-          rows={3}
-        />
       </div>
 
       <Button
