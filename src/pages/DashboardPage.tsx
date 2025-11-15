@@ -118,8 +118,8 @@ const DashboardPage = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="bg-gradient-primary p-4 rounded-lg flex items-center justify-center">
-                    <QrCode className="h-24 w-24 text-primary-foreground" />
+                  <div className="bg-white p-4 rounded-lg flex items-center justify-center">
+                    <QRCodeSVG value={ticket.qr_code} size={200} level="H" />
                   </div>
                   
                   <div className="space-y-2 text-sm">

@@ -1,34 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, LogOut, User } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
+import { Shield, Ticket, Home, User } from "lucide-react";
 
 interface NavbarProps {
   user: any;
 }
 
 export const Navbar = ({ user }: NavbarProps) => {
-  const navigate = useNavigate();
-  const { toast } = useToast();
-
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      toast({
-        title: "Logout Failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else {
-      toast({
-        title: "Logged Out",
-        description: "You have been successfully logged out",
-      });
-      navigate("/auth");
-    }
-  };
-
   return (
     <nav className="border-b bg-card shadow-soft sticky top-0 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -41,27 +19,29 @@ export const Navbar = ({ user }: NavbarProps) => {
           </span>
         </Link>
 
-        <div className="flex items-center gap-4">
-          {user && (
+        <div className="flex items-center gap-2">
+          {user ? (
             <>
-              <Link to="/dashboard">
+              <Link to="/home">
                 <Button variant="ghost" size="sm" className="gap-2">
-                  <User className="h-4 w-4" />
-                  My Tickets
+                  <Home className="h-4 w-4" />
+                  Home
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleLogout}
-                className="gap-2"
-              >
-                <LogOut className="h-4 w-4" />
-                Logout
-              </Button>
+              <Link to="/dashboard">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <Ticket className="h-4 w-4" />
+                  My Bookings
+                </Button>
+              </Link>
+              <Link to="/account">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <User className="h-4 w-4" />
+                  My Account
+                </Button>
+              </Link>
             </>
-          )}
-          {!user && (
+          ) : (
             <Link to="/auth">
               <Button variant="default" size="sm" className="bg-gradient-primary">
                 Login
