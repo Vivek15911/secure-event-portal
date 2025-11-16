@@ -42,9 +42,12 @@ const BookingPage = () => {
     setLoading(true);
 
     try {
+      console.log("Starting booking process with data:", bookingData);
+      
       const ticketNumber = `TKT-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
       const qrCodeData = `${window.location.origin}/verify/${ticketNumber}`;
 
+      console.log("Creating booking...");
       const { data: booking, error: bookingError } = await supabase
         .from("bookings")
         .insert({
@@ -56,12 +59,18 @@ const BookingPage = () => {
         .select()
         .single();
 
-      if (bookingError) throw bookingError;
+      if (bookingError) {
+        console.error("Booking creation error:", bookingError);
+        throw bookingError;
+      }
+
+      console.log("Booking created successfully:", booking);
 
       const expiresAt = new Date(bookingData.bookingDate);
       expiresAt.setDate(expiresAt.getDate() + 1);
       expiresAt.setHours(0, 0, 0, 0);
 
+      console.log("Creating ticket...");
       const { error: ticketError } = await supabase.from("tickets").insert({
         booking_id: booking.id,
         ticket_number: ticketNumber,
@@ -69,7 +78,12 @@ const BookingPage = () => {
         expires_at: expiresAt.toISOString(),
       });
 
-      if (ticketError) throw ticketError;
+      if (ticketError) {
+        console.error("Ticket creation error:", ticketError);
+        throw ticketError;
+      }
+
+      console.log("Ticket created successfully");
 
       toast({
         title: "Booking Successful!",
@@ -78,9 +92,10 @@ const BookingPage = () => {
 
       navigate("/dashboard");
     } catch (error: any) {
+      console.error("Booking submission error:", error);
       toast({
         title: "Booking Failed",
-        description: error.message,
+        description: error.message || "An unknown error occurred. Check console for details.",
         variant: "destructive",
       });
     } finally {
