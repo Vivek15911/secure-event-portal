@@ -25,7 +25,7 @@ export const AuthPage = () => {
     // Check if user is already logged in
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
-        navigate("/create-ticket");
+      navigate("/");
       }
     });
   }, [navigate]);

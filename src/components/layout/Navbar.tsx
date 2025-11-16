@@ -28,16 +28,16 @@ export const Navbar = ({ user }: NavbarProps) => {
                   Home
                 </Button>
               </Link>
-              <Link to="/create-ticket">
-                <Button variant="ghost" size="sm" className="gap-2">
-                  <Ticket className="h-4 w-4" />
-                  Create Ticket
-                </Button>
-              </Link>
               <Link to="/dashboard">
                 <Button variant="ghost" size="sm" className="gap-2">
                   <Ticket className="h-4 w-4" />
                   My Bookings
+                </Button>
+              </Link>
+              <Link to="/create-ticket">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <Ticket className="h-4 w-4" />
+                  Create Ticket
                 </Button>
               </Link>
               <Link to="/account">
