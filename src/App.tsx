@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Session } from "@supabase/supabase-js";
 import LandingPage from "./pages/LandingPage";
+import HomePage from "./pages/HomePage";
 import Index from "./pages/Index";
 import { AuthPage } from "./components/auth/AuthPage";
 import BookingPage from "./pages/BookingPage";
@@ -54,7 +55,7 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={session ? <HomePage /> : <LandingPage />} />
             <Route path="/create-ticket" element={<Index />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/book/:type" element={<BookingPage />} />
